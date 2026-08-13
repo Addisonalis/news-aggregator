@@ -10,9 +10,12 @@ from app.database import initialize_database
 
 app = FastAPI(title="News Aggregator API")
 
+
+# Initialize database when the application starts
 initialize_database()
 
 
+# Static files
 app.mount(
     "/static",
     StaticFiles(directory="static"),
@@ -20,8 +23,13 @@ app.mount(
 )
 
 
+# Templates
 templates = Jinja2Templates(directory="templates")
 
+
+# -------------------------
+# Home page
+# -------------------------
 
 @app.get("/", response_class=HTMLResponse)
 async def home(request: Request):
@@ -30,6 +38,10 @@ async def home(request: Request):
         name="index.html"
     )
 
+
+# -------------------------
+# News
+# -------------------------
 
 @app.get("/news")
 def news(
@@ -43,10 +55,15 @@ def news(
         limit=limit
     )
 
+
+# -------------------------
+# Weather
+# -------------------------
+
 @app.get("/weather")
 def weather(latitude: float, longitude: float):
 
-    # Get weather
+    # Get weather from Open-Meteo
     weather_url = "https://api.open-meteo.com/v1/forecast"
 
     weather_params = {
@@ -79,7 +96,11 @@ def weather(latitude: float, longitude: float):
 
     weather_data = weather_response.json()
 
-    # Reverse geocoding
+
+    # -------------------------
+    # Get town/city name
+    # -------------------------
+
     location_url = "https://nominatim.openstreetmap.org/reverse"
 
     location_params = {
@@ -89,37 +110,41 @@ def weather(latitude: float, longitude: float):
         "zoom": 10
     }
 
-    location_headers = {
-        "User-Agent": "NewsAggregator/1.0"
-    }
+    try:
 
-    location_response = requests.get(
-        location_url,
-        params=location_params,
-        headers=location_headers,
-        timeout=10
-    )
+        location_response = requests.get(
+            location_url,
+            params=location_params,
+            headers={
+                "User-Agent": "NewsAggregator/1.0"
+            },
+            timeout=5
+        )
 
-    location_response.raise_for_status()
+        if location_response.status_code == 200:
 
-    location_data = location_response.json()
+            location_data = location_response.json()
 
-    print("LOCATION DATA:")
-    print(location_data)
+            address = location_data.get("address", {})
 
-    address = location_data.get("address", {})
+            town = (
+                address.get("town")
+                or address.get("city")
+                or address.get("village")
+                or address.get("municipality")
+                or "Local Weather"
+            )
 
-    town = (
-        address.get("town")
-        or address.get("city")
-        or address.get("village")
-        or address.get("municipality")
-        or address.get("county")
-        or "Unknown Location"
-    )
+        else:
 
-    print("TOWN:", town)
+            town = "Local Weather"
 
+    except requests.RequestException:
+
+        town = "Local Weather"
+
+
+    # Add town name to response
     weather_data["location_name"] = town
 
     return weather_data
