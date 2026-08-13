@@ -87,39 +87,45 @@ def get_image(entry):
             if match:
                 return match.group(0)
 
-    # No image found
     return None
 
 
 NEWS_FEEDS = {
+
     # =========================
-    # GENERAL / U.S.
+    # GENERAL
     # =========================
 
     "BBC": {
         "url": "https://feeds.bbci.co.uk/news/rss.xml",
         "category": "general"
     },
+
     "NPR": {
         "url": "https://feeds.npr.org/1001/rss.xml",
         "category": "general"
     },
+
     "CBS News": {
         "url": "https://www.cbsnews.com/latest/rss/main",
         "category": "general"
     },
+
     "NBC News": {
         "url": "https://feeds.nbcnews.com/nbcnews/public/news",
         "category": "general"
     },
+
     "ABC News": {
         "url": "https://abcnews.com/abcnews/topstories",
         "category": "general"
     },
+
     "USA Today": {
         "url": "https://rssfeeds.usatoday.com/usatoday-NewsTopStories",
         "category": "general"
     },
+
     "The Hill": {
         "url": "https://thehill.com/feed/",
         "category": "general"
@@ -133,38 +139,27 @@ NEWS_FEEDS = {
         "url": "https://feeds.bbci.co.uk/news/world/rss.xml",
         "category": "world"
     },
-    "BBC Technology": {
-        "url": "https://feeds.bbci.co.uk/news/technology/rss.xml",
-        "category": "technology"
-    },
-    "BBC Science": {
-        "url": "https://feeds.bbci.co.uk/news/science_and_environment/rss.xml",
-        "category": "science"
-    },
-    "BBC Sport": {
-        "url": "https://feeds.bbci.co.uk/sport/rss.xml",
-        "category": "sports"
-    },
-    "NPR": {
-        "url": "https://feeds.npr.org/1001/rss.xml",
-        "category": "general"
-    },
+
     "NPR World": {
         "url": "https://feeds.npr.org/1004/rss.xml",
         "category": "world"
     },
+
     "Al Jazeera": {
         "url": "https://www.aljazeera.com/xml/rss/all.xml",
         "category": "world"
     },
+
     "DW World": {
         "url": "https://rss.dw.com/rdf/rss-en-all",
         "category": "world"
     },
+
     "Guardian World": {
         "url": "https://www.theguardian.com/world/rss",
         "category": "world"
     },
+
     "France 24": {
         "url": "https://www.france24.com/en/rss",
         "category": "world"
@@ -178,22 +173,27 @@ NEWS_FEEDS = {
         "url": "https://feeds.npr.org/1006/rss.xml",
         "category": "business"
     },
+
     "CNBC": {
         "url": "https://www.cnbc.com/id/100003114/device/rss/rss.html",
         "category": "business"
     },
+
     "MarketWatch": {
         "url": "https://feeds.marketwatch.com/marketwatch/topstories/",
         "category": "business"
     },
+
     "Forbes": {
         "url": "https://www.forbes.com/real-time/feed2/",
         "category": "business"
     },
+
     "Fortune": {
         "url": "https://fortune.com/feed/",
         "category": "business"
     },
+
     "Business Insider": {
         "url": "https://feeds.businessinsider.com/custom/all",
         "category": "business"
@@ -207,34 +207,42 @@ NEWS_FEEDS = {
         "url": "https://feeds.bbci.co.uk/news/technology/rss.xml",
         "category": "technology"
     },
+
     "NPR Technology": {
         "url": "https://feeds.npr.org/1019/rss.xml",
         "category": "technology"
     },
+
     "Ars Technica": {
         "url": "https://feeds.arstechnica.com/arstechnica/index",
         "category": "technology"
     },
+
     "TechCrunch": {
         "url": "https://techcrunch.com/feed/",
         "category": "technology"
     },
+
     "The Verge": {
         "url": "https://www.theverge.com/rss/index.xml",
         "category": "technology"
     },
+
     "Wired": {
         "url": "https://www.wired.com/feed/rss",
         "category": "technology"
     },
+
     "Engadget": {
         "url": "https://www.engadget.com/rss.xml",
         "category": "technology"
     },
+
     "VentureBeat": {
         "url": "https://venturebeat.com/feed/",
         "category": "technology"
     },
+
     "CNET": {
         "url": "https://www.cnet.com/rss/news/",
         "category": "technology"
@@ -248,26 +256,32 @@ NEWS_FEEDS = {
         "url": "https://feeds.bbci.co.uk/news/science_and_environment/rss.xml",
         "category": "science"
     },
+
     "NPR Science": {
         "url": "https://feeds.npr.org/1007/rss.xml",
         "category": "science"
     },
+
     "NASA": {
         "url": "https://www.nasa.gov/rss/dyn/breaking_news.rss",
         "category": "science"
     },
+
     "ScienceDaily": {
         "url": "https://www.sciencedaily.com/rss/all.xml",
         "category": "science"
     },
+
     "Phys.org": {
         "url": "https://phys.org/rss-feed/",
         "category": "science"
     },
+
     "New Scientist": {
         "url": "https://www.newscientist.com/feed/home/",
         "category": "science"
     },
+
     "Scientific American": {
         "url": "http://rss.sciam.com/ScientificAmerican-Global",
         "category": "science"
@@ -281,18 +295,22 @@ NEWS_FEEDS = {
         "url": "https://feeds.bbci.co.uk/sport/rss.xml",
         "category": "sports"
     },
+
     "NPR Sports": {
         "url": "https://feeds.npr.org/1055/rss.xml",
         "category": "sports"
     },
+
     "ESPN": {
         "url": "https://www.espn.com/espn/rss/news",
         "category": "sports"
     },
+
     "CBS Sports": {
         "url": "https://www.cbssports.com/rss/headlines/",
         "category": "sports"
     },
+
     "NBC Sports": {
         "url": "https://www.nbcsports.com/feed",
         "category": "sports"
@@ -306,14 +324,17 @@ NEWS_FEEDS = {
         "url": "https://variety.com/feed/",
         "category": "entertainment"
     },
+
     "Rolling Stone": {
         "url": "https://www.rollingstone.com/feed/",
         "category": "entertainment"
     },
+
     "Hollywood Reporter": {
         "url": "https://www.hollywoodreporter.com/feed/",
         "category": "entertainment"
     },
+
     "Deadline": {
         "url": "https://deadline.com/feed/",
         "category": "entertainment"
@@ -321,7 +342,41 @@ NEWS_FEEDS = {
 }
 
 
+def clean_summary(raw_summary):
+    """
+    Remove HTML and prevent RSS feeds from displaying
+    extremely long full-article descriptions.
+    """
+
+    if not raw_summary:
+        return ""
+
+    # Remove HTML tags
+    summary = re.sub(r"<[^>]+>", "", raw_summary)
+
+    # Decode common HTML entities
+    summary = (
+        summary
+        .replace("&nbsp;", " ")
+        .replace("&amp;", "&")
+        .replace("&quot;", '"')
+        .replace("&#39;", "'")
+        .replace("&lt;", "<")
+        .replace("&gt;", ">")
+    )
+
+    # Clean whitespace
+    summary = re.sub(r"\s+", " ", summary).strip()
+
+    # Limit summary length
+    if len(summary) > 300:
+        summary = summary[:300].rsplit(" ", 1)[0] + "..."
+
+    return summary
+
+
 def get_news(category=None, source=None, limit=50):
+
     articles = []
     seen_links = set()
 
@@ -331,10 +386,12 @@ def get_news(category=None, source=None, limit=50):
         if source and source.lower() != source_name.lower():
             continue
 
+        # Filter by category
         if category and category.lower() != feed_info["category"].lower():
             continue
 
         try:
+
             feed = feedparser.parse(
                 feed_info["url"],
                 request_headers={
@@ -347,6 +404,7 @@ def get_news(category=None, source=None, limit=50):
                 continue
 
         except Exception as error:
+
             print(f"Feed failed: {source_name} - {error}")
             continue
 
@@ -359,15 +417,21 @@ def get_news(category=None, source=None, limit=50):
 
             seen_links.add(link)
 
-            # Get publication date
+            # Publication date
             published = entry.get("published")
 
             try:
+
                 published_date = parsedate_to_datetime(published)
                 published_timestamp = published_date.timestamp()
 
             except (TypeError, ValueError):
+
                 published_timestamp = 0
+
+            # Clean article summary
+            raw_summary = entry.get("summary", "")
+            summary = clean_summary(raw_summary)
 
             # Build article
             article = {
@@ -376,25 +440,28 @@ def get_news(category=None, source=None, limit=50):
                 "title": entry.get("title"),
                 "link": link,
                 "published": published,
-                "summary": entry.get("summary"),
+                "summary": summary,
                 "_timestamp": published_timestamp,
                 "image": get_image(entry)
             }
 
             articles.append(article)
 
+            # Save to database
             try:
+
                 save_article(article)
+
             except Exception as error:
+
                 print(
                     f"Database error for {source_name}: {error}"
                 )
 
-    # Sort newest first
+    # Newest articles first
     articles.sort(
         key=lambda article: article["_timestamp"],
         reverse=True
     )
 
-    # Return requested number of articles
     return articles[:limit]
