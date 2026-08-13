@@ -5,8 +5,12 @@ from fastapi.templating import Jinja2Templates
 import requests
 
 from app.news import get_news
+from app.database import initialize_database
+
 
 app = FastAPI(title="News Aggregator API")
+
+initialize_database()
 
 
 app.mount(
