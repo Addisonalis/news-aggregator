@@ -92,10 +92,43 @@ def get_image(entry):
 
 
 NEWS_FEEDS = {
+    # =========================
+    # GENERAL / U.S.
+    # =========================
+
     "BBC": {
         "url": "https://feeds.bbci.co.uk/news/rss.xml",
         "category": "general"
     },
+    "NPR": {
+        "url": "https://feeds.npr.org/1001/rss.xml",
+        "category": "general"
+    },
+    "CBS News": {
+        "url": "https://www.cbsnews.com/latest/rss/main",
+        "category": "general"
+    },
+    "NBC News": {
+        "url": "https://feeds.nbcnews.com/nbcnews/public/news",
+        "category": "general"
+    },
+    "ABC News": {
+        "url": "https://abcnews.com/abcnews/topstories",
+        "category": "general"
+    },
+    "USA Today": {
+        "url": "https://rssfeeds.usatoday.com/usatoday-NewsTopStories",
+        "category": "general"
+    },
+    "The Hill": {
+        "url": "https://thehill.com/feed/",
+        "category": "general"
+    },
+
+    # =========================
+    # WORLD
+    # =========================
+
     "BBC World": {
         "url": "https://feeds.bbci.co.uk/news/world/rss.xml",
         "category": "world"
@@ -120,29 +153,170 @@ NEWS_FEEDS = {
         "url": "https://feeds.npr.org/1004/rss.xml",
         "category": "world"
     },
+    "Al Jazeera": {
+        "url": "https://www.aljazeera.com/xml/rss/all.xml",
+        "category": "world"
+    },
+    "DW World": {
+        "url": "https://rss.dw.com/rdf/rss-en-all",
+        "category": "world"
+    },
+    "Guardian World": {
+        "url": "https://www.theguardian.com/world/rss",
+        "category": "world"
+    },
+    "France 24": {
+        "url": "https://www.france24.com/en/rss",
+        "category": "world"
+    },
+
+    # =========================
+    # BUSINESS
+    # =========================
+
     "NPR Business": {
         "url": "https://feeds.npr.org/1006/rss.xml",
         "category": "business"
+    },
+    "CNBC": {
+        "url": "https://www.cnbc.com/id/100003114/device/rss/rss.html",
+        "category": "business"
+    },
+    "MarketWatch": {
+        "url": "https://feeds.marketwatch.com/marketwatch/topstories/",
+        "category": "business"
+    },
+    "Forbes": {
+        "url": "https://www.forbes.com/real-time/feed2/",
+        "category": "business"
+    },
+    "Fortune": {
+        "url": "https://fortune.com/feed/",
+        "category": "business"
+    },
+    "Business Insider": {
+        "url": "https://feeds.businessinsider.com/custom/all",
+        "category": "business"
+    },
+
+    # =========================
+    # TECHNOLOGY
+    # =========================
+
+    "BBC Technology": {
+        "url": "https://feeds.bbci.co.uk/news/technology/rss.xml",
+        "category": "technology"
     },
     "NPR Technology": {
         "url": "https://feeds.npr.org/1019/rss.xml",
         "category": "technology"
     },
+    "Ars Technica": {
+        "url": "https://feeds.arstechnica.com/arstechnica/index",
+        "category": "technology"
+    },
+    "TechCrunch": {
+        "url": "https://techcrunch.com/feed/",
+        "category": "technology"
+    },
+    "The Verge": {
+        "url": "https://www.theverge.com/rss/index.xml",
+        "category": "technology"
+    },
+    "Wired": {
+        "url": "https://www.wired.com/feed/rss",
+        "category": "technology"
+    },
+    "Engadget": {
+        "url": "https://www.engadget.com/rss.xml",
+        "category": "technology"
+    },
+    "VentureBeat": {
+        "url": "https://venturebeat.com/feed/",
+        "category": "technology"
+    },
+    "CNET": {
+        "url": "https://www.cnet.com/rss/news/",
+        "category": "technology"
+    },
+
+    # =========================
+    # SCIENCE
+    # =========================
+
+    "BBC Science": {
+        "url": "https://feeds.bbci.co.uk/news/science_and_environment/rss.xml",
+        "category": "science"
+    },
     "NPR Science": {
         "url": "https://feeds.npr.org/1007/rss.xml",
         "category": "science"
+    },
+    "NASA": {
+        "url": "https://www.nasa.gov/rss/dyn/breaking_news.rss",
+        "category": "science"
+    },
+    "ScienceDaily": {
+        "url": "https://www.sciencedaily.com/rss/all.xml",
+        "category": "science"
+    },
+    "Phys.org": {
+        "url": "https://phys.org/rss-feed/",
+        "category": "science"
+    },
+    "New Scientist": {
+        "url": "https://www.newscientist.com/feed/home/",
+        "category": "science"
+    },
+    "Scientific American": {
+        "url": "http://rss.sciam.com/ScientificAmerican-Global",
+        "category": "science"
+    },
+
+    # =========================
+    # SPORTS
+    # =========================
+
+    "BBC Sport": {
+        "url": "https://feeds.bbci.co.uk/sport/rss.xml",
+        "category": "sports"
     },
     "NPR Sports": {
         "url": "https://feeds.npr.org/1055/rss.xml",
         "category": "sports"
     },
-    "Ars Technica": {
-        "url": "https://feeds.arstechnica.com/arstechnica/index",
-        "category": "technology"
+    "ESPN": {
+        "url": "https://www.espn.com/espn/rss/news",
+        "category": "sports"
     },
-    "CNBC": {
-        "url": "https://www.cnbc.com/id/100003114/device/rss/rss.html",
-        "category": "business"
+    "CBS Sports": {
+        "url": "https://www.cbssports.com/rss/headlines/",
+        "category": "sports"
+    },
+    "NBC Sports": {
+        "url": "https://www.nbcsports.com/feed",
+        "category": "sports"
+    },
+
+    # =========================
+    # ENTERTAINMENT
+    # =========================
+
+    "Variety": {
+        "url": "https://variety.com/feed/",
+        "category": "entertainment"
+    },
+    "Rolling Stone": {
+        "url": "https://www.rollingstone.com/feed/",
+        "category": "entertainment"
+    },
+    "Hollywood Reporter": {
+        "url": "https://www.hollywoodreporter.com/feed/",
+        "category": "entertainment"
+    },
+    "Deadline": {
+        "url": "https://deadline.com/feed/",
+        "category": "entertainment"
     },
 }
 
@@ -157,24 +331,30 @@ def get_news(category=None, source=None, limit=50):
         if source and source.lower() != source_name.lower():
             continue
 
-        # Filter by category
         if category and category.lower() != feed_info["category"].lower():
             continue
 
-        # Parse RSS feed
-        feed = feedparser.parse(feed_info["url"])
+        try:
+            feed = feedparser.parse(
+                feed_info["url"],
+                request_headers={
+                    "User-Agent": "Mozilla/5.0 NewsAggregator/1.0"
+                }
+            )
 
-        # Get up to 10 articles from each source
-        for entry in feed.entries[:10]:
+            if not feed.entries:
+                print(f"No articles found: {source_name}")
+                continue
+
+        except Exception as error:
+            print(f"Feed failed: {source_name} - {error}")
+            continue
+
+        for entry in feed.entries[:15]:
 
             link = entry.get("link")
 
-            # Skip articles without links
-            if not link:
-                continue
-
-            # Skip duplicate articles
-            if link in seen_links:
+            if not link or link in seen_links:
                 continue
 
             seen_links.add(link)
@@ -203,8 +383,12 @@ def get_news(category=None, source=None, limit=50):
 
             articles.append(article)
 
-            # Save article to database
-            save_article(article)
+            try:
+                save_article(article)
+            except Exception as error:
+                print(
+                    f"Database error for {source_name}: {error}"
+                )
 
     # Sort newest first
     articles.sort(
