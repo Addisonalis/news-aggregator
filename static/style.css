@@ -1,0 +1,278 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    color: #222;
+    overflow-x: hidden;
+}
+
+/* =========================
+   HEADER
+   ========================= */
+
+header {
+    text-align: center;
+    padding: 30px 20px 20px;
+    background: white;
+}
+
+header h1 {
+    margin: 0 0 8px;
+    font-size: 32px;
+}
+
+header p {
+    margin: 0;
+    color: #666;
+}
+
+/* =========================
+   NAVIGATION
+   ========================= */
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 20px;
+    background: white;
+    border-bottom: 1px solid #ddd;
+}
+
+nav button {
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    background: #e9edf1;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+nav button:hover {
+    background: #dce2e8;
+}
+
+/* =========================
+   MAIN
+   ========================= */
+
+main {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+/* =========================
+   WEATHER
+   ========================= */
+
+#weather-container {
+    width: 100%;
+    margin-bottom: 35px;
+}
+
+.weather-card {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 32px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.weather-card h2 {
+    margin: 0 0 20px;
+    font-size: 24px;
+}
+
+.weather-temperature {
+    font-size: 52px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.weather-card p {
+    margin: 10px 0;
+    line-height: 1.6;
+    overflow-wrap: break-word;
+}
+
+/* =========================
+   NEWS GRID
+   ========================= */
+
+#news-container {
+    width: 100%;
+    display: grid;
+
+    /* Automatically fit cards without overflowing */
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(260px, 1fr)
+    );
+
+    gap: 24px;
+}
+
+/* =========================
+   NEWS CARD
+   ========================= */
+
+.news-card {
+    width: 100%;
+    min-width: 0;
+
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+}
+
+.news-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================
+   NEWS IMAGE
+   ========================= */
+
+.news-image {
+    width: 100%;
+    height: 190px;
+
+    object-fit: cover;
+    display: block;
+}
+
+/* =========================
+   SOURCE
+   ========================= */
+
+.source {
+    padding: 18px 20px 0;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    color: #666;
+    text-transform: uppercase;
+}
+
+/* =========================
+   TITLE
+   ========================= */
+
+.news-card h2 {
+    margin: 10px 0;
+
+    padding: 0 20px;
+
+    font-size: 20px;
+    line-height: 1.35;
+
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.news-card h2 a {
+    color: #222;
+    text-decoration: none;
+}
+
+.news-card h2 a:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   SUMMARY
+   ========================= */
+
+.news-card p {
+    margin: 12px 0;
+
+    padding: 0 20px;
+
+    color: #555;
+
+    line-height: 1.55;
+
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+/* =========================
+   DATE
+   ========================= */
+
+.news-card small {
+    display: block;
+
+    padding: 12px 20px 20px;
+
+    color: #888;
+
+    line-height: 1.4;
+}
+
+/* =========================
+   TABLET
+   ========================= */
+
+@media (max-width: 900px) {
+
+    main {
+        padding: 20px;
+    }
+
+    #news-container {
+        grid-template-columns: repeat(
+            2,
+            minmax(0, 1fr)
+        );
+    }
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 600px) {
+
+    main {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 26px;
+    }
+
+    #news-container {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .weather-card {
+        padding: 24px;
+    }
+
+    .weather-temperature {
+        font-size: 42px;
+    }
+
+    .news-card h2 {
+        font-size: 19px;
+    }
+}

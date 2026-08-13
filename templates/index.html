@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>News Aggregator</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>News Aggregator</h1>
+        <p>Latest news from multiple sources</p>
+    </header>
+
+    <nav>
+        <button onclick="loadNews()">All</button>
+        <button onclick="loadNews('world')">World</button>
+        <button onclick="loadNews('business')">Business</button>
+        <button onclick="loadNews('technology')">Technology</button>
+        <button onclick="loadNews('science')">Science</button>
+        <button onclick="loadNews('sports')">Sports</button>
+    </nav>
+
+    <main>
+
+        <!-- Weather -->
+        <div id="weather-container">
+            <p>Getting your location...</p>
+        </div>
+
+        <!-- News -->
+        <div id="news-container">
+            <p>Loading news...</p>
+        </div>
+
+    </main>
+
+    <script src="/static/script.js"></script>
+
+</body>
+</html>
